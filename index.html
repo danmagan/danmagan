@@ -8,10 +8,10 @@
 <body>
     <div id="circulo"></div>
     <script type="text/javascript">
-        $.ajax("info.txt").done(function(data){
-            alert(data);
-        }).fail(function(){
-            alert("ha ocurrido un error");});
+        var texto="las expresiones regulares son la bomba";
+        var regex=/reg/;
+        var resultado=texto.match(regex);
+        alert(resultado);
     </script>
         </body>
 </html>
