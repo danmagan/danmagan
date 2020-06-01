@@ -24,27 +24,67 @@
                 width:550px;
                 margin: 0 auto; 
             }
+    #mensaje error {
+        color:red;
+        font-size: 110% !important
+    }
 
         </style>
     <head>
 </head>
 <body>
     <div id="contenedor"><label for="email">Email</label>
+        <div id="mensajecontenedorcampos"></div>
     <input type="text" name="email" id="email.com" placeholder="for example@domain.com"></div>
     
-     <div id="contenedor"><label for="email">Telefono</label>
-    <input type="text" name="telefono" id="email.com" placeholder="ej.1140920986"></div>
+     <div id="contenedor"><label for="Telefono">Telefono</label>
+    <input type="text" name="telefono" id="telefono" placeholder="ej.1140920986"></div>
     
-     <div id="contenedor"><label for="email">Password</label>
-    <input type="password" name="password" id="email.com" placeholder="for example@domain.com"></div>
+     <div id="contenedor"><label for="Password">Password</label>
+    <input type="password" name="password" id="password"></div>
     
-     <div id="contenedor"><label for="email">Email</label>
-    <input type="text" name="email" id="email.com" placeholder="for example@domain.com"></div>
+     <div id="contenedor"><label for="confirmarpassword">Confirmar Password</label>
+    <input type="password" name="confirmarpassword" id="confirmarpass"></div>
     
-    <div class="elemento-formulario">
-        <input type="submit" id="botonEnviar" value="Enviar Datos">
+    <div id="contenedor">
+        <input type="submit" id="botonEnviar" value="ENVIAR DATOS">
+        <div id="mensajeExito"></div>
     </div>
     <script type="text/javascript">
+        $("#botonEnviar").clicl(function(){
+            var campoVacio ="";
+            var mensajeError ="";
+            //verificacion de campos no vacios
+            if $("#email".val() == "")
+            {
+                campoVacio = campoVacio+"#email<br>"
+            }
+            if $("#telefono".val() == "")
+            {
+                campoVacio = campoVacio+"#telefono<br>"
+            }
+            if $("password".val() == "")
+            {
+                campoVacio = campoVacio+"#password<br>"
+            }
+            if $("confirmar password".val() == "")
+            {
+                campoVacio = campoVacio+"#confirmarpassword<br>"
+            }
+            if (campoVacio!="")
+                {
+                    mensajeError = "<p>Los siguientes campos estan vacios:"+campoVacio+mensajeError;
+                }
+            if (mensajeError!="")
+                {
+                    $("#mensajeErrorCampos").html(mensajeError);
+                }
+            else
+                {
+                    $("#mensajeExito").html("<p>Enhorabuena, haz completado el registro satisfactoriamente")
+                }
+            
+        })
     </script>
     
         </body>
